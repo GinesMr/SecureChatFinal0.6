@@ -118,7 +118,7 @@ public class userJpaController implements Serializable {
         }
     }
 
-    public user finduser(Long id) {
+    public user finduser(long  id) {
         EntityManager em = getEntityManager();
         try {
             return em.find(user.class, id);

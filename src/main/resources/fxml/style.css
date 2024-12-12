@@ -1,0 +1,65 @@
+/* Estilos globales */
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+Pane {
+    -fx-background-color: #ffffff; /* Fondo blanco */
+}
+
+TextField, PasswordField {
+    -fx-background-color: #f5f5f5; /* Color de fondo más suave para los campos */
+    -fx-border-color: #656ED3; /* Línea principal */
+    -fx-border-width: 2px; /* Grosor de la línea */
+    -fx-text-fill: #AFB3FF; /* Color del texto */
+    -fx-font-size: 16px;
+    -fx-padding: 10px;
+    -fx-prompt-text-fill: #AFB3FF; /* Color del texto placeholder */
+    -fx-background-radius: 20px; /* Esquinas redondeadas */
+    -fx-border-radius: 20px; /* Borde redondeado */
+    -fx-transition: all 0.3s ease; /* Transición suave */
+}
+
+TextField:focused, PasswordField:focused {
+    -fx-border-color: #AFB3FF; /* Cambiar color al estar enfocado */
+    -fx-background-color: #ffffff; /* Fondo blanco al estar enfocado para resaltar */
+    -fx-box-shadow: 0 0 5px #AFB3FF; /* Agregar sombra al enfocar */
+}
+
+
+TextField:hover, PasswordField:hover {
+    -fx-border-color: #AFB3FF; /* Cambiar color al estar en hover */
+    -fx-box-shadow: 0 0 5px #AFB3FF; /* Agregar sombra al hover */
+}
+
+Button {
+    -fx-background-color: #f0f0f0; /* Fondo claro para mayor contraste */
+    -fx-border-color: #656ED3; /* Línea principal */
+    -fx-border-width: 2px; /* Grosor de la línea */
+    -fx-text-fill: #656ED3; /* Color del texto */
+    -fx-font-size: 16px;
+    -fx-padding: 10px 20px; /* Padding ajustado */
+    -fx-cursor: hand; /* Cambiar el cursor a mano */
+    -fx-background-radius: 20px; /* Esquinas redondeadas */
+    -fx-border-radius: 20px; /* Borde redondeado */
+    -fx-transition: all 0.3s ease; /* Transición suave */
+}
+
+Button:hover {
+    -fx-background-color: #656ED3; /* Fondo al estar en hover */
+    -fx-text-fill: #ffffff; /* Color del texto al estar en hover */
+    -fx-border-color: #AFB3FF; /* Cambiar color al estar en hover */
+    -fx-box-shadow: 0 0 5px #AFB3FF; /* Agregar sombra al hover */
+    transform: scale(1.05); /* Escala al estar en hover */
+}
+
+Button:pressed {
+    -fx-background-color: #AFB3FF; /* Fondo al ser presionado */
+    -fx-text-fill: #000000; /* Color del texto al ser presionado */
+    transform: scale(0.95); /* Escala al ser presionado */
+}
+
+Label {
+    -fx-text-fill: #656ED3; /* Color del texto */
+    -fx-font-size: 24px; /* Tamaño de la fuente */
+}

@@ -29,18 +29,8 @@ public class ControladorPersistenciaController {
         }
     }
 
-    
     public List<user> buscarTodos() {
         return userJpaController.finduserEntities();
     }
 
-    
-    public user buscarPorUsername(String username) {
-        return userJpaController.findByUsername(username);
-    }
-
-    
-    public boolean usuarioExiste(String username) {
-        return buscarPorUsername(username) != null;
-    }
 }

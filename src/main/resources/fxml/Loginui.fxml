@@ -2,15 +2,29 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="577.0" prefWidth="1024.0"  xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControladoresUi.login">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1600.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControladoresUi.login">
    <children>
-      <TextField fx:id="username" layoutX="90.0" layoutY="220.0" prefHeight="33.0" prefWidth="311.0" />
-      <TextField fx:id="password" layoutX="90.0" layoutY="314.0" prefHeight="33.0" prefWidth="311.0" />
-      <Button fx:id="login" layoutX="93.0" layoutY="404.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="152.0" text="Login" />
-      <Button fx:id="sign" layoutX="254.0" layoutY="404.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="152.0" text="Sign Up" />
-      <Label fx:id="welcome"  layoutX="217.0" layoutY="166.0" text="Welcome" />
+      <ImageView fitHeight="901.0" fitWidth="1609.0" layoutX="-6.0" layoutY="-1.0">
+         <image>
+            <Image url="@Login%20Pagelogin%20page%20.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="username" layoutX="113.0" layoutY="341.0" prefHeight="46.0" prefWidth="470.0" />
+      <PasswordField fx:id="password" layoutX="111.0" layoutY="438.0" prefHeight="46.0" prefWidth="470.0" />
+      <Button fx:id="login" layoutX="62.0" layoutY="540.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="263.0" text="Login" />
+      <Button fx:id="sign" layoutX="375.0" layoutY="542.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="264.0" text="Sign Up" />
+      <Label fx:id="welcome" layoutX="281.0" layoutY="258.0" text="Welcome" />
+      <Label fx:id="labelname" layoutX="121.0" layoutY="301.0" prefHeight="35.0" prefWidth="153.0" style="-fx-text-fill: #000000; -fx-font-size: 20px;" stylesheets="@style.css" text="Username:" />
+      <Label fx:id="labelpass" layoutX="119.0" layoutY="399.0" prefHeight="35.0" prefWidth="135.0" style="-fx-text-fill: #000000; -fx-font-size: 20px;" text="Password:" />
+      <Label fx:id="welcome1" layoutX="195.0" layoutY="118.0" prefHeight="98.0" prefWidth="293.0" style="-fx-font-size: 50px; -fx-font-weight: bold;" text="SecureChat" />
+      <Label fx:id="mensaje" layoutX="121.0" layoutY="491.0" style="-fx-text-fill: #FF0000;" text="The username or password is incorrect." visible="false" />
+      <Label fx:id="empty" layoutX="587.0" layoutY="397.0" prefHeight="35.0" prefWidth="190.0" style="-fx-text-fill: #FF0000;" text="Fields are empty" visible="false" />
+      <Label fx:id="exist" layoutX="124.0" layoutY="491.0" style="-fx-text-fill: #FF0000;" text="This email already has an account." visible="false" />
    </children>
 </Pane>

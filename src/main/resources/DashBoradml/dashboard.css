@@ -1,0 +1,78 @@
+/* Estilo general para el fondo y la disposición del Pane */
+.root {
+    -fx-background-color: #F4F7FB; /* Color de fondo suave para todo el dashboard */
+    -fx-font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente moderna */
+}
+
+/* Estilo para el label principal (Market Graphs) */
+#marketgraphlabel {
+    -fx-font-size: 30px; /* Tamaño de la fuente más grande para el label principal */
+    -fx-font-weight: bold; /* Negrita */
+    -fx-text-fill: #352E5B; /* Color para el label principal */
+    -fx-background-color: transparent;
+    -fx-font-family: 'Roboto', 'Segoe UI', sans-serif; /* Fuente moderna */
+    -fx-padding: 10px; /* Espaciado interno */
+    -fx-alignment: center; /* Centrado del texto */
+}
+
+/* Estilo para los labels secundarios (Bitcoin, Ethereum, XRP, Overall data) */
+.Label {
+    -fx-font-size: 25px; /* Aumentamos el tamaño de la fuente para los labels secundarios */
+    -fx-font-weight: bold; /* Mantener la negrita */
+    -fx-text-fill: #AFB3FF; /* Color para los labels secundarios */
+    -fx-background-color: transparent;
+    -fx-font-family: 'Roboto', 'Segoe UI', sans-serif; /* Fuente moderna */
+    -fx-padding: 5px; /* Espaciado interno */
+    -fx-alignment: center; /* Centrado del texto */
+}
+
+/* Estilo para el fondo de los panes */
+#bitcoinpane, #etherumpane, #Xrp, #bitcoinpane1 {
+    -fx-background-color: #838CF1; /* Color de fondo de los panes */
+    -fx-background-radius: 15; /* Bordes redondeados */
+    -fx-border-width: 0; /* Eliminar bordes */
+}
+
+/* Estilo general para los botones */
+.Button {
+    -fx-background-color: #838CF1; /* Color principal del botón */
+    -fx-text-fill: #FFFFFF; /* Color del texto */
+    -fx-font-size: 18px; /* Tamaño del texto */
+    -fx-font-weight: bold; /* Texto en negrita */
+    -fx-background-radius: 50; /* Bordes redondeados */
+    -fx-border-width: 0; /* Eliminar bordes */
+    -fx-padding: 10 20; /* Espaciado interno del texto */
+    -fx-cursor: hand; /* Cambia el cursor al pasar sobre el botón */
+    -fx-transition: background-color 0.3s ease, -fx-text-fill 0.3s ease, transform 0.3s ease; /* Animaciones */
+}
+
+/* Efecto hover (cuando el ratón está sobre el botón) */
+.Button:hover {
+    -fx-background-color: #AFB3FF; /* Color más claro al pasar el ratón */
+    -fx-text-fill: #352E5B; /* Cambia el color del texto */
+    transform: scale(1.05); /* Escala al pasar el ratón */
+}
+
+/* Efecto al presionar el botón */
+.Button:pressed {
+    -fx-background-color: #352E5B; /* Color más oscuro al presionar */
+    -fx-text-fill: #FFFFFF; /* Mantén el texto blanco */
+    transform: scale(0.95); /* Escala al presionar */
+}
+
+/* Estilo único para los botones individuales */
+#homeButton, #chatButton, #marketButton, #createReportButton,#exit {
+    -fx-background-color: #838CF1; /* Color único para estos botones */
+    -fx-text-fill: #FFFFFF;
+    -fx-font-weight: bold;
+    -fx-background-radius: 20; /* Bordes redondeados */
+}
+#SecureLabelPanel{
+    -fx-background-color: #838CF1; /* Color de fondo de los panes */
+    -fx-background-radius: 15; /* Bordes redondeados */
+    -fx-border-width: 0; /* Eliminar bordes */
+
+}
+#welcomeuser{
+    -fx-text-fill: #FFFFFF;
+}

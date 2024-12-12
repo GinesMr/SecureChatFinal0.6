@@ -1,0 +1,34 @@
+/* Estilo para las alertas */
+.alert {
+    -fx-background-color: #ffffff; /* Fondo blanco */
+    -fx-border-color: #656ED3; /* Borde de color similar a los TextField */
+    -fx-border-width: 2px;
+    -fx-padding: 20px;
+    -fx-background-radius: 10px;
+    -fx-text-fill: #656ED3; /* Color de texto */
+    -fx-font-size: 16px;
+}
+
+.alert .label {
+    -fx-text-fill: #656ED3; /* Color del texto */
+    -fx-font-size: 16px;
+}
+
+.alert .content {
+    -fx-background-color: #f0f0f0; /* Fondo suave */
+    -fx-border-radius: 10px;
+    -fx-padding: 10px;
+}
+
+.alert .button {
+    -fx-background-color: #656ED3; /* Fondo de los botones */
+    -fx-text-fill: #ffffff; /* Texto en blanco */
+    -fx-border-radius: 20px; /* Bordes redondeados */
+    -fx-padding: 10px 20px; /* Padding */
+    -fx-font-size: 16px;
+}
+
+.alert .button:hover {
+    -fx-background-color: #AFB3FF; /* Fondo más claro al pasar el mouse */
+    -fx-text-fill: #000000; /* Texto oscuro en hover */
+}
