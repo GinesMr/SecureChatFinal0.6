@@ -5,22 +5,23 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.web.WebView?>
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1601.0" stylesheets="@dashboard.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControladoresUi.dashboard">
    <children>
-      <Pane layoutY="-10.0" prefHeight="912.0" prefWidth="382.0" style="-fx-background-color: AFB3FF;">
+      <Pane layoutY="-10.0" prefHeight="912.0" prefWidth="382.0">
          <children>
-            <Button fx:id="homeButton" layoutX="59.0" layoutY="363.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="262.0" text="Home" />
-            <Button fx:id="chatButton" layoutX="58.0" layoutY="469.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="262.0" text="Chat" />
-            <Button fx:id="marketButton" layoutX="61.0" layoutY="574.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="262.0" text="Market" />
-            <Button fx:id="createReportButton" layoutX="59.0" layoutY="687.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="262.0" text="Create a report" />
-            <Pane fx:id="SecureLabelPanel" layoutX="11.0" layoutY="42.0" prefHeight="145.0" prefWidth="363.0" style="-fx-background-color: #838CF1;">
+            <Button fx:id="homeButton" layoutX="-44.0" layoutY="245.0" mnemonicParsing="false" prefHeight="69.0" prefWidth="388.0" text="Home" />
+            <Button fx:id="chatButton" layoutX="-44.0" layoutY="359.0" mnemonicParsing="false" prefHeight="69.0" prefWidth="388.0" text="Chat" />
+            <Button fx:id="marketButton" layoutX="-44.0" layoutY="482.0" mnemonicParsing="false" prefHeight="69.0" prefWidth="388.0" text="Market" />
+            <Button fx:id="createReportButton" layoutX="-44.0" layoutY="606.0" mnemonicParsing="false" prefHeight="69.0" prefWidth="388.0" text="Create a report" />
+            <Pane fx:id="SecureLabelPanel" layoutX="-52.0" layoutY="42.0" prefHeight="116.0" prefWidth="426.0">
                <children>
-                  <Label fx:id="Securelabel" layoutX="56.0" layoutY="21.0" prefHeight="69.0" prefWidth="231.0" style="-fx-font-size: 40px; -fx-font-weight: bold; -fx-text-fill: FFFFFF; -fx-background-color: transparent; -fx-font-family: 'Roboto', 'Segoe UI', sans-serif; -fx-padding: 10px; -fx-alignment: center;" text="SecureChat" />
-                  <Label fx:id="welcomeuser" layoutX="79.0" layoutY="77.0" prefHeight="15.0" prefWidth="177.0" text="Welcome " />
+                  <Label fx:id="Securelabel" layoutX="97.0" layoutY="24.0" prefHeight="69.0" prefWidth="233.0" style="-fx-font-size: 40px; -fx-font-weight: bold; -fx-text-fill: FFFFFF; -fx-background-color: transparent; -fx-font-family: 'Roboto', 'Segoe UI', sans-serif; -fx-padding: 10px; -fx-alignment: center;" text="SecureChat" />
                </children>
             </Pane>
-            <ImageView fitHeight="31.0" fitWidth="32.0" layoutX="76.0" layoutY="585.0">
+            <ImageView fitHeight="31.0" fitWidth="32.0" layoutX="62.0" layoutY="501.0">
                <image>
                   <Image url="@Vector.png" />
                </image>
@@ -30,32 +31,87 @@
                   <Image url="@datos.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="34.0" fitWidth="36.0" layoutX="69.0" layoutY="480.0">
+            <ImageView fitHeight="34.0" fitWidth="36.0" layoutX="60.0" layoutY="377.0">
                <image>
                   <Image url="@bubble-chart.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="32.0" fitWidth="33.0" layoutX="76.0" layoutY="698.0">
+            <ImageView fitHeight="32.0" fitWidth="33.0" layoutX="61.0" layoutY="625.0">
                <image>
                   <Image url="@table.png" />
                </image>
             </ImageView>
-            <Button fx:id="exit" layoutX="38.0" layoutY="828.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="129.0" text="Exit" />
-            <ImageView fitHeight="39.0" fitWidth="38.0" layoutX="72.0" layoutY="373.0">
+            <ImageView fitHeight="39.0" fitWidth="38.0" layoutX="59.0" layoutY="260.0">
                <image>
                   <Image url="@spider-diagram.png" />
                </image>
             </ImageView>
+            <ImageView fitHeight="415.0" fitWidth="363.0" layoutX="-122.0" layoutY="705.0">
+               <image>
+                  <Image url="@Rectangle%206.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="200.0" fitWidth="288.0" layoutX="-47.0" layoutY="715.0">
+               <image>
+                  <Image url="@Rectangle%205.png" />
+               </image>
+            </ImageView>
          </children>
       </Pane>
-      <Pane fx:id="bitcoinpane" layoutX="465.0" layoutY="164.0" prefHeight="208.0" prefWidth="305.0" style="-fx-background-color: #838CF1;" />
-      <Pane fx:id="etherumpane" layoutX="837.0" layoutY="164.0" prefHeight="208.0" prefWidth="305.0" style="-fx-background-color: #838CF1;" />
-      <Pane fx:id="Xrp" layoutX="1206.0" layoutY="164.0" prefHeight="208.0" prefWidth="305.0" style="-fx-background-color: #838CF1;" />
-      <Label fx:id="marketgraphlabel" layoutX="458.0" layoutY="55.0" prefHeight="58.0" prefWidth="220.0" text="Market Graphs" />
-      <Label fx:id="bitocinlabel" layoutX="465.0" layoutY="113.0" prefHeight="39.0" prefWidth="128.0" style="-fx-text-fill: #AFB3FF; -fx-font-weight: bold; -fx-font-size: 25px;" text="Bitcoin" />
-      <Label fx:id="Etherumlabel" layoutX="837.0" layoutY="113.0" prefHeight="39.0" prefWidth="128.0" style="-fx-text-fill: #AFB3FF; -fx-font-weight: bold; -fx-font-size: 25px;" text="Etherum" />
-      <Label layoutX="1206.0" layoutY="113.0" prefHeight="39.0" prefWidth="128.0" style="-fx-text-fill: #AFB3FF; -fx-font-weight: bold; -fx-font-size: 25px;" text="Xrp" fx:id="xrplabe" />
-      <Label fx:id="overalllabel" layoutX="465.0" layoutY="450.0" prefHeight="39.0" prefWidth="154.0" style="-fx-text-fill: #AFB3FF; -fx-font-weight: bold; -fx-font-size: 25px;" text="Overall data" />
-      <Pane fx:id="bitcoinpane1" layoutX="465.0" layoutY="502.0" prefHeight="365.0" prefWidth="1055.0" style="-fx-background-color: #838CF1;" />
+      <Pane fx:id="bitcoinpane" layoutX="465.0" layoutY="164.0" prefHeight="229.0" prefWidth="332.0">
+         <children>
+            <Label fx:id="totalmarket" layoutX="15.0" layoutY="92.0" prefHeight="16.0" prefWidth="189.0" text="Today total market:" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="63.0" fitWidth="61.0" layoutX="15.0" layoutY="14.0">
+               <image>
+                  <Image url="@Protocol=Bitcoin%20SV,%20Effect=Shadow.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="PrecioBitcoin" layoutX="17.0" layoutY="123.0" prefHeight="63.0" prefWidth="280.0" text="100.573,402 $" />
+            <Label fx:id="porbit" layoutX="22.0" layoutY="192.0" prefWidth="128.0" style="-fx-text-fill: #228B22;" text="Up to 2%" />
+         </children></Pane>
+      <Pane fx:id="etherumpane" layoutX="837.0" layoutY="164.0" prefHeight="229.0" prefWidth="323.0">
+         <children>
+            <ImageView fitHeight="63.0" fitWidth="61.0" layoutX="14.0" layoutY="14.0">
+               <image>
+                  <Image url="@Protocol=Ethereum,%20Effect=None.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="totalmarket1" layoutX="14.0" layoutY="91.0" prefHeight="16.0" prefWidth="189.0" text="Today total market:" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="PrecioEth" layoutX="19.0" layoutY="126.0" prefHeight="42.0" prefWidth="280.0" text="100.573,402 $" />
+            <Label fx:id="poreth" layoutX="21.0" layoutY="193.0" prefWidth="128.0" style="-fx-text-fill: #228B22;" text="Up to 2%" />
+         </children></Pane>
+      <Pane fx:id="Xrp" layoutX="1206.0" layoutY="164.0" prefHeight="229.0" prefWidth="315.0">
+         <children>
+            <Label fx:id="PrecioSolana" layoutX="15.0" layoutY="124.0" prefHeight="42.0" prefWidth="280.0" text="100.573,402 $" />
+            <Label fx:id="totalmarket11" layoutX="13.0" layoutY="90.0" prefHeight="21.0" prefWidth="155.0" text="Today total market:" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="13.0" layoutY="14.0">
+               <image>
+                  <Image url="@Protocol=Solana,%20Effect=None.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="porsol" layoutX="16.0" layoutY="193.0" prefWidth="128.0" style="-fx-text-fill: #228B22;" text="Up to 2%" />
+         </children></Pane>
+      <Label fx:id="marketgraphlabel" layoutX="418.0" layoutY="65.0" prefHeight="58.0" prefWidth="222.0" text="Market Graphs" />
+      <Label fx:id="bitocinlabel" layoutX="465.0" layoutY="113.0" prefHeight="39.0" prefWidth="128.0" style="-fx-text-fill: FFF; -fx-font-weight: bold; -fx-font-size: 25px;" text="Bitcoin" />
+      <Label fx:id="Etherumlabel" layoutX="837.0" layoutY="113.0" prefHeight="39.0" prefWidth="128.0" style="-fx-font-weight: bold; -fx-font-size: 25px; -fx-text-fill: FFF;" text="Etherum" />
+      <Label layoutX="1206.0" layoutY="113.0" prefHeight="39.0" prefWidth="128.0" style="-fx-text-fill: FFF; -fx-font-weight: bold; -fx-font-size: 25px;" text="Solana" fx:id="xrplabe" />
+      <Label fx:id="overalllabel" layoutX="465.0" layoutY="450.0" prefHeight="39.0" prefWidth="154.0" style="-fx-text-fill: FFFF; -fx-font-weight: bold; -fx-font-size: 25px;" text="Overall data" />
+      <Pane fx:id="bitcoinpane1" layoutX="465.0" layoutY="502.0" prefHeight="365.0" prefWidth="1055.0">
+         <children>
+            <WebView fx:id="overalldata" layoutY="1.0" prefHeight="365.0" prefWidth="1055.0" />
+         </children></Pane>
+      <Label fx:id="welcomeuser" layoutX="355.0" layoutY="14.0" prefHeight="58.0" prefWidth="426.0" text="Welcome back, " />
    </children>
 </Pane>

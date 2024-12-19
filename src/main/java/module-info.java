@@ -14,6 +14,8 @@ module org.example.securechatfinal {
     requires java.desktop;
     requires org.hibernate.orm.core;
     requires jdk.compiler;
+    requires Java.WebSocket;
+    requires org.json;
 
     // Exportar los paquetes necesarios
     exports ControladoresUi;

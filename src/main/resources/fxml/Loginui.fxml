@@ -10,9 +10,9 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1600.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControladoresUi.login">
    <children>
-      <ImageView fitHeight="901.0" fitWidth="1609.0" layoutX="-6.0" layoutY="-1.0">
+      <ImageView fitHeight="906.0" fitWidth="1607.0">
          <image>
-            <Image url="@Login%20Pagelogin%20page%20.png" />
+            <Image url="@Login%20Pagelogin%20page.png" />
          </image>
       </ImageView>
       <TextField fx:id="username" layoutX="113.0" layoutY="341.0" prefHeight="46.0" prefWidth="470.0" />
