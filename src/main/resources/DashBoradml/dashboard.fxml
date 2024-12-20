@@ -70,8 +70,8 @@
                   <Image url="@Protocol=Bitcoin%20SV,%20Effect=Shadow.png" />
                </image>
             </ImageView>
-            <Label fx:id="PrecioBitcoin" layoutX="17.0" layoutY="123.0" prefHeight="63.0" prefWidth="280.0" text="100.573,402 $" />
-            <Label fx:id="porbit" layoutX="22.0" layoutY="192.0" prefWidth="128.0" style="-fx-text-fill: #228B22;" text="Up to 2%" />
+            <Label fx:id="PrecioBitcoin" layoutX="17.0" layoutY="123.0" prefHeight="63.0" prefWidth="280.0" />
+            <Label fx:id="porbit" layoutX="22.0" layoutY="192.0" prefHeight="15.0" prefWidth="262.0" style="-fx-text-fill: #228B22;" />
          </children></Pane>
       <Pane fx:id="etherumpane" layoutX="837.0" layoutY="164.0" prefHeight="229.0" prefWidth="323.0">
          <children>
@@ -85,12 +85,12 @@
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <Label fx:id="PrecioEth" layoutX="19.0" layoutY="126.0" prefHeight="42.0" prefWidth="280.0" text="100.573,402 $" />
-            <Label fx:id="poreth" layoutX="21.0" layoutY="193.0" prefWidth="128.0" style="-fx-text-fill: #228B22;" text="Up to 2%" />
+            <Label fx:id="PrecioEth" layoutX="19.0" layoutY="126.0" prefHeight="42.0" prefWidth="280.0" />
+            <Label fx:id="poreth" layoutX="21.0" layoutY="193.0" prefHeight="15.0" prefWidth="262.0" style="-fx-text-fill: #228B22;" />
          </children></Pane>
       <Pane fx:id="Xrp" layoutX="1206.0" layoutY="164.0" prefHeight="229.0" prefWidth="315.0">
          <children>
-            <Label fx:id="PrecioSolana" layoutX="15.0" layoutY="124.0" prefHeight="42.0" prefWidth="280.0" text="100.573,402 $" />
+            <Label fx:id="PrecioSolana" layoutX="15.0" layoutY="124.0" prefHeight="42.0" prefWidth="280.0" />
             <Label fx:id="totalmarket11" layoutX="13.0" layoutY="90.0" prefHeight="21.0" prefWidth="155.0" text="Today total market:" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="15.0" />
@@ -101,7 +101,7 @@
                   <Image url="@Protocol=Solana,%20Effect=None.png" />
                </image>
             </ImageView>
-            <Label fx:id="porsol" layoutX="16.0" layoutY="193.0" prefWidth="128.0" style="-fx-text-fill: #228B22;" text="Up to 2%" />
+            <Label fx:id="porsol" layoutX="16.0" layoutY="193.0" prefHeight="15.0" prefWidth="269.0" style="-fx-text-fill: #228B22;" />
          </children></Pane>
       <Label fx:id="marketgraphlabel" layoutX="418.0" layoutY="65.0" prefHeight="58.0" prefWidth="222.0" text="Market Graphs" />
       <Label fx:id="bitocinlabel" layoutX="465.0" layoutY="113.0" prefHeight="39.0" prefWidth="128.0" style="-fx-text-fill: FFF; -fx-font-weight: bold; -fx-font-size: 25px;" text="Bitcoin" />

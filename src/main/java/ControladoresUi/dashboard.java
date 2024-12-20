@@ -11,6 +11,7 @@ import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 import services.CryptoServices.CryptoGraphs;
+import services.CryptoServices.CryptoHistoric.data;
 import services.CryptoServices.Extractor;
 import services.CryptoServices.CryptoGraphs;
 import services.CryptoServices.PriceListener;
@@ -21,11 +22,15 @@ import java.util.concurrent.TimeUnit;
 
 public class dashboard implements PriceListener{
     private CryptoGraphs cryptoGraphs;
+    private data data= new data();
+    private Extractor extractor = new Extractor();
+    private ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
 
     private String username;
     private login login;
-    private Extractor extractor = new Extractor();
-    private ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
+     Double hisbit= extractor.extract(data.getHistoricData("BTC","USD"));
+     Double hiseth= extractor.extract(data.getHistoricData("ETH","USD"));
+     Double hissol= extractor.extract(data.getHistoricData("SOL","USD"));
 
     @FXML
     private Button homeButton;
@@ -80,16 +85,46 @@ public class dashboard implements PriceListener{
                 case "BTC":
                     if (PrecioBitcoin != null) {
                         PrecioBitcoin.setText(String.format("$%.2f", price));
+
+                        porbit.setText(String.format("%.2f", calculatepr(price, hisbit)));
+
+                        if (price > hisbit) {
+                            porbit.setStyle("-fx-text-fill: green;");
+                            porbit.setText("Last day up to: "+porbit.getText() + " %  "+" ↑");
+                        } else {
+                            porbit.setStyle("-fx-text-fill: red;");
+                            porbit.setText("Last day down to: "+porbit.getText() + " %  "+" ↓");
+                        }
                     }
                     break;
                 case "ETH":
                         if (PrecioEth != null) {
                             PrecioEth.setText(String.format("$%.2f", price));
+
+                            poreth.setText(String.format("%.2f", calculatepr(price, hiseth)));
+
+                            if (price > hiseth) {
+                                poreth.setStyle("-fx-text-fill: green;");
+                                poreth.setText("Last day up to: "+poreth.getText() + " %  "+" ↑");
+                            } else {
+                                poreth.setStyle("-fx-text-fill: red;");
+                                poreth.setText("Last day down to: "+poreth.getText() + " %  "+" ↓");
+                            }
                         }
                         break;
                 case "SOL":
                     if (PrecioEth != null) {
                         PrecioSolana.setText(String.format("$%.2f", price));
+
+                        porsol.setText(String.format("%.2f", calculatepr(price,hissol)));
+
+                        if (price > hissol) {
+                            porsol.setStyle("-fx-text-fill: green;");
+                            porsol.setText("Last day up to: "+porsol.getText() + " %  "+" ↑");
+                        } else {
+                            porsol.setStyle("-fx-text-fill: red;");
+                            porsol.setText("Last day down to: "+porsol.getText() + " %  "+" ↓");
+                        }
                     }
             }
         });
@@ -143,6 +178,12 @@ public class dashboard implements PriceListener{
         });
     }
 
+    private double calculatepr(double precio, double preciohis){
+        if (preciohis == 0) {
+            return 0;
+        }
+        return ((precio - preciohis) / preciohis) * 100;
+    }
 
 
     private boolean showAlert(String title, String header, String content) {

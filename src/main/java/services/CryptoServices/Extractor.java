@@ -1,12 +1,17 @@
 package services.CryptoServices;
+
 import org.json.JSONObject;
 
 public class Extractor {
 
-    public double extract(String json,String Type) {
-        JSONObject Json= new JSONObject(json);
+    public double extract(String json) {
+        JSONObject jsonObject = new JSONObject(json);
 
-        double precio=Json.getDouble(Type);
+        // Acceder directamente a la clave "Data" y luego a "Data" dentro de "Data"
+        JSONObject dataObject = jsonObject.getJSONObject("Data");
+        JSONObject dataArray = dataObject.getJSONArray("Data").getJSONObject(0); // Suponiendo primer dato
+
+        double precio = dataArray.getDouble("close");
 
         return precio;
     }
