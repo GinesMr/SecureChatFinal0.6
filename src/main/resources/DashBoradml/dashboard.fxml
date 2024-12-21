@@ -107,10 +107,14 @@
       <Label fx:id="bitocinlabel" layoutX="465.0" layoutY="113.0" prefHeight="39.0" prefWidth="128.0" style="-fx-text-fill: FFF; -fx-font-weight: bold; -fx-font-size: 25px;" text="Bitcoin" />
       <Label fx:id="Etherumlabel" layoutX="837.0" layoutY="113.0" prefHeight="39.0" prefWidth="128.0" style="-fx-font-weight: bold; -fx-font-size: 25px; -fx-text-fill: FFF;" text="Etherum" />
       <Label layoutX="1206.0" layoutY="113.0" prefHeight="39.0" prefWidth="128.0" style="-fx-text-fill: FFF; -fx-font-weight: bold; -fx-font-size: 25px;" text="Solana" fx:id="xrplabe" />
-      <Label fx:id="overalllabel" layoutX="465.0" layoutY="450.0" prefHeight="39.0" prefWidth="154.0" style="-fx-text-fill: FFFF; -fx-font-weight: bold; -fx-font-size: 25px;" text="Overall data" />
       <Pane fx:id="bitcoinpane1" layoutX="465.0" layoutY="502.0" prefHeight="365.0" prefWidth="1055.0">
          <children>
-            <WebView fx:id="overalldata" layoutY="1.0" prefHeight="365.0" prefWidth="1055.0" />
+            <WebView fx:id="overalldata" layoutY="-99.0" prefHeight="465.0" prefWidth="1055.0" />
+            <Pane layoutY="-99.0" prefHeight="69.0" prefWidth="1055.0" style="-fx-background-color: #0D0D0D;">
+               <children>
+                  <Label fx:id="overalllabel" layoutY="15.0" prefHeight="39.0" prefWidth="402.0" style="-fx-text-fill: FFFF; -fx-font-weight: bold; -fx-font-size: 25px;" text="Overall data from CoinMarketCap " />
+               </children>
+            </Pane>
          </children></Pane>
       <Label fx:id="welcomeuser" layoutX="355.0" layoutY="14.0" prefHeight="58.0" prefWidth="426.0" text="Welcome back, " />
    </children>

@@ -6,57 +6,80 @@
 Pane {
     -fx-background-color: #1E1E1E; /* Fondo oscuro para contraste */
 }
-
 TextField, PasswordField {
-    -fx-background-color: #2A2A2A; /* Fondo más oscuro para un diseño sofisticado */
-    -fx-border-color: #656ED3; /* Línea principal suave */
-    -fx-border-width: 2px; /* Grosor de la línea */
-    -fx-text-fill: #D1D1D1; /* Color del texto más claro */
-    -fx-font-size: 16px;
-    -fx-padding: 10px;
-    -fx-prompt-text-fill: #B3B3B3; /* Color del texto placeholder */
+    -fx-background-color: #2A2A2A; /* Fondo neutro */
+    -fx-border-color: #656ED3; /* Línea principal */
+    -fx-border-width: 2px; /* Grosor del borde */
+    -fx-text-fill: #D1D1D1; /* Color del texto */
+    -fx-font-size: 16px; /* Tamaño de la fuente */
+    -fx-pref-height: 40px; /* Altura fija */
+    -fx-padding: 0 12px; /* Padding para centrar el texto */
     -fx-background-radius: 20px; /* Esquinas redondeadas */
     -fx-border-radius: 20px; /* Borde redondeado */
-    -fx-transition: all 0.3s ease; /* Transición suave */
+    -fx-alignment: center-left; /* Alineación del texto */
+    -fx-prompt-text-fill: #7F7F7F; /* Placeholder menos dominante */
 }
 
 TextField:focused, PasswordField:focused {
-    -fx-border-color: #D1D1D1; /* Cambiar color al estar enfocado */
-    -fx-background-color: #1E1E1E; /* Fondo oscuro al estar enfocado para resaltar */
-    -fx-box-shadow: 0 0 8px #656ED3; /* Agregar sombra más suave al enfocar */
+    -fx-background-color: #1E1E1E; /* Fondo más oscuro al enfocar */
+    -fx-border-color: #D1D1D1; /* Cambiar color del borde */
+    -fx-text-fill: #D1D1D1; /* Texto más claro */
+    -fx-prompt-text-fill: #9B9B9B; /* Placeholder menos contrastado */
+    -fx-effect: dropshadow(gaussian, rgba(101, 110, 211, 0.3), 10, 0.3, 0, 4); /* Sombra suave */
 }
 
 TextField:hover, PasswordField:hover {
-    -fx-border-color: #D1D1D1; /* Cambiar color al estar en hover */
-    -fx-box-shadow: 0 0 8px #656ED3; /* Agregar sombra al hover */
+    -fx-background-color: #2E2E2E; /* Fondo ligeramente más oscuro */
+    -fx-border-color: #D1D1D1; /* Cambiar color del borde */
+    -fx-effect: dropshadow(gaussian, rgba(101, 110, 211, 0.2), 10, 0.2, 0, 3); /* Sombra leve */
 }
 
+TextField:empty:not(:focused), PasswordField:empty:not(:focused) {
+    -fx-background-color: #242424; /* Fondo más uniforme cuando está vacío */
+    -fx-prompt-text-fill: #5F5F5F; /* Placeholder muy tenue */
+    -fx-border-color: #3C3C3C; /* Borde más tenue */
+    -fx-effect: none; /* Sin sombras */
+}
+
+TextField:disabled, PasswordField:disabled {
+    -fx-background-color: #2A2A2A; /* Fondo gris neutro */
+    -fx-border-color: #3C3C3C; /* Borde más tenue */
+    -fx-text-fill: #7F7F7F; /* Texto deshabilitado */
+    -fx-prompt-text-fill: #5F5F5F; /* Placeholder deshabilitado */
+    -fx-effect: none; /* Sin sombra */
+}
+
+
 Button {
-    -fx-background-color: #2A2A2A; /* Fondo oscuro contrastado */
+    -fx-background-color: linear-gradient(to bottom, #3B3B3B, #2A2A2A); /* Gradiente suave */
     -fx-border-color: #656ED3; /* Línea principal */
     -fx-border-width: 2px; /* Grosor de la línea */
-    -fx-text-fill: #D1D1D1; /* Color del texto más claro */
+    -fx-text-fill: #D1D1D1; /* Color del texto */
     -fx-font-size: 16px;
-    -fx-padding: 10px 20px; /* Padding ajustado */
+    -fx-padding: 12px 25px; /* Ajuste del padding */
     -fx-cursor: hand; /* Cambiar el cursor a mano */
-    -fx-background-radius: 20px; /* Esquinas redondeadas */
-    -fx-border-radius: 20px; /* Borde redondeado */
+    -fx-background-radius: 25px; /* Esquinas redondeadas */
+    -fx-border-radius: 25px; /* Borde redondeado */
+    -fx-effect: dropshadow(gaussian, rgba(101, 110, 211, 0.3), 10, 0.3, 0, 4); /* Sombra inicial */
     -fx-transition: all 0.3s ease; /* Transición suave */
 }
 
 Button:hover {
-    -fx-background-color: #656ED3; /* Fondo oscuro con tono vibrante */
-    -fx-text-fill: #ffffff; /* Color del texto al estar en hover */
-    -fx-border-color: #D1D1D1; /* Cambiar color al estar en hover */
-    -fx-box-shadow: 0 0 8px #656ED3; /* Agregar sombra al hover */
-    transform: scale(1.05); /* Escala al estar en hover */
+    -fx-background-color: linear-gradient(to bottom, #656ED3, #4B4B4B); /* Gradiente vibrante */
+    -fx-text-fill: #FFFFFF; /* Texto en blanco al hacer hover */
+    -fx-border-color: #D1D1D1; /* Cambiar color del borde */
+    -fx-effect: dropshadow(gaussian, rgba(101, 110, 211, 0.6), 15, 0.4, 0, 6); /* Sombra más intensa */
+    transform: scale(1.08); /* Escalar ligeramente */
 }
 
 Button:pressed {
-    -fx-background-color: #3C3C3C; /* Fondo más oscuro al ser presionado */
+    -fx-background-color: linear-gradient(to bottom, #2A2A2A, #1E1E1E); /* Gradiente más oscuro */
     -fx-text-fill: #FFFFFF; /* Texto en blanco */
-    transform: scale(0.95); /* Escala al ser presionado */
+    -fx-border-color: #3C3C3C; /* Color del borde más tenue */
+    -fx-effect: dropshadow(gaussian, rgba(101, 110, 211, 0.2), 5, 0.2, 0, 2); /* Sombra reducida */
+    transform: scale(0.95); /* Reducir tamaño al presionar */
 }
+
 
 Label {
     -fx-text-fill: #656ED3; /* Color del texto contrastado */

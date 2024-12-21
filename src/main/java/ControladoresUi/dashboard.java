@@ -90,10 +90,10 @@ public class dashboard implements PriceListener{
 
                         if (price > hisbit) {
                             porbit.setStyle("-fx-text-fill: green;");
-                            porbit.setText("Last day up to: "+porbit.getText() + " %  "+" ↑");
+                            porbit.setText("Last day: Price increased by up to "+porbit.getText() + " %  "+" ↑");
                         } else {
                             porbit.setStyle("-fx-text-fill: red;");
-                            porbit.setText("Last day down to: "+porbit.getText() + " %  "+" ↓");
+                            porbit.setText("Last day: Price decreased by up to "+porbit.getText() + " %  "+" ↓");
                         }
                     }
                     break;
@@ -105,10 +105,10 @@ public class dashboard implements PriceListener{
 
                             if (price > hiseth) {
                                 poreth.setStyle("-fx-text-fill: green;");
-                                poreth.setText("Last day up to: "+poreth.getText() + " %  "+" ↑");
+                                poreth.setText("Last day: Price increased by up to "+poreth.getText() + " %  "+" ↑");
                             } else {
                                 poreth.setStyle("-fx-text-fill: red;");
-                                poreth.setText("Last day down to: "+poreth.getText() + " %  "+" ↓");
+                                poreth.setText("Last day: Price decreased by up to  "+poreth.getText() + " %  "+" ↓");
                             }
                         }
                         break;
@@ -120,10 +120,10 @@ public class dashboard implements PriceListener{
 
                         if (price > hissol) {
                             porsol.setStyle("-fx-text-fill: green;");
-                            porsol.setText("Last day up to: "+porsol.getText() + " %  "+" ↑");
+                            porsol.setText("Last day: Price increased by up to "+porsol.getText() + " %  "+" ↑");
                         } else {
                             porsol.setStyle("-fx-text-fill: red;");
-                            porsol.setText("Last day down to: "+porsol.getText() + " %  "+" ↓");
+                            porsol.setText("Last day: Price decreased by up to "+porsol.getText() + " %  "+" ↓");
                         }
                     }
             }

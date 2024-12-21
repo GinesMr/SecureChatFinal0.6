@@ -1,5 +1,7 @@
     package ControladoresUi;
 
+    import javafx.animation.FadeTransition;
+    import javafx.animation.ScaleTransition;
     import javafx.fxml.FXML;
     import javafx.fxml.FXMLLoader;
     import javafx.scene.Scene;
@@ -7,6 +9,7 @@
     import javafx.scene.control.Alert.AlertType;
     import javafx.scene.layout.Pane;
     import javafx.stage.Stage;
+    import javafx.util.Duration;
     import services.UserLogSig.userServices;
 
     public class login {
@@ -134,11 +137,13 @@
 
         private void loadDashboard() {
             try {
-                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/DashBoradml/dashboard.fxml"));  // Cambiado a esta ruta relativa
+                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/DashBoradml/dashboard.fxml"));
                 Pane dashboardPane = fxmlLoader.load();
                 dashboard dashboardController = fxmlLoader.getController();
                 Scene dashboardScene = new Scene(dashboardPane);
+
                 Stage currentStage = (Stage) login.getScene().getWindow();
+
                 currentStage.setScene(dashboardScene);
                 dashboardController.setUsername(username.getText());
                 currentStage.show();
@@ -147,6 +152,7 @@
                 showAlert(Alert.AlertType.ERROR, "Error", "No se pudo cargar el dashboard", e.getMessage());
             }
         }
+
 
 
 
