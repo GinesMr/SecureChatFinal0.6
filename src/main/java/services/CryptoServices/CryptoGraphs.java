@@ -9,7 +9,7 @@ import java.net.URISyntaxException;
 
 public class CryptoGraphs {
     private static Extractor extractor = new Extractor();
-    private static final String API_KEY = "1";//"7ce137e1ffbc7b64fe06081576013c62d6fbff887983c825f3cf8584935b8ffc";
+    private static final String API_KEY = "7ce137e1ffbc7b64fe06081576013c62d6fbff887983c825f3cf8584935b8ffc";
     private static final String SOCKET_URL = "wss://streamer.cryptocompare.com/v2?api_key=" + API_KEY;
 
     private PriceListener priceListener;

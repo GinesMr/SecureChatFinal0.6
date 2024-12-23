@@ -13,121 +13,144 @@ import javafx.stage.Stage;
 import services.CryptoServices.CryptoGraphs;
 import services.CryptoServices.CryptoHistoric.data;
 import services.CryptoServices.Extractor;
-import services.CryptoServices.CryptoGraphs;
 import services.CryptoServices.PriceListener;
 import java.util.Optional;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.TimeUnit;
 
-public class dashboard implements PriceListener{
+public class dashboard implements PriceListener {
     private CryptoGraphs cryptoGraphs;
-    private data data= new data();
+    private data data = new data();
     private Extractor extractor = new Extractor();
     private ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
-
     private String username;
     private login login;
-     Double hisbit= extractor.extract(data.getHistoricData("BTC","USD"));
-     Double hiseth= extractor.extract(data.getHistoricData("ETH","USD"));
-     Double hissol= extractor.extract(data.getHistoricData("SOL","USD"));
+    Double hisbit = extractor.extract(data.getHistoricData("BTC","USD"));
+    Double hiseth = extractor.extract(data.getHistoricData("ETH","USD"));
+    Double hissol = extractor.extract(data.getHistoricData("SOL","USD"));
 
-    @FXML
-    private Button homeButton;
-    @FXML
-    private Button chatButton;
-    @FXML
-    private Button marketButton;
-    @FXML
-    private Button createReportButton;
-    @FXML
-    private Label marketGraphLabel;
-    @FXML
-    private Pane bitcoinPane;
-    @FXML
-    private Pane ethereumPane;
-    @FXML
-    private Pane xrpPane;
-    @FXML
-    private Label welcomeuser;
-    @FXML
-    private Label PrecioBitcoin;
-    @FXML
-    private Label PrecioEth;
-    @FXML
-    private Label PrecioSolana;
-    @FXML
-    private Label porsol;
-    @FXML
-    private Label poreth;
-    @FXML
-    private Label porbit;
-    @FXML
-    private WebView overalldata;
-
-
+    @FXML private Button homeButton;
+    @FXML private Button chatButton;
+    @FXML private Button marketButton;
+    @FXML private Button createReportButton;
+    @FXML private Label marketGraphLabel;
+    @FXML private Pane bitcoinPane;
+    @FXML private Pane ethereumPane;
+    @FXML private Pane xrpPane;
+    @FXML private Label welcomeuser;
+    @FXML private Label PrecioBitcoin;
+    @FXML private Label PrecioEth;
+    @FXML private Label PrecioSolana;
+    @FXML private Label porsol;
+    @FXML private Label poreth;
+    @FXML private Label porbit;
+    @FXML private WebView overalldata;
+    private WebEngine webEngine;
 
     @FXML
     public void initialize() {
+        Platform.runLater(() -> {
+            try {
+                initializeWebView();
+            } catch (Exception e) {
+                System.err.println("Error initializing WebView: " + e.getMessage());
+                e.printStackTrace();
+            }
+        });
+
         cryptoGraphs = new CryptoGraphs(this);
         cryptoGraphs.connect();
-        WebView();
+
         homeButton.setOnAction(event -> navigateTo("Home"));
         chatButton.setOnAction(event -> navigateTo("Chat"));
         marketButton.setOnAction(event -> navigateTo("Market"));
         createReportButton.setOnAction(event -> createReport());
     }
+
+    private void initializeWebView() {
+        if (overalldata != null) {
+            webEngine = overalldata.getEngine();
+            String url = "https://cryptotreemap.com/";
+
+            webEngine.documentProperty().addListener((observable, oldDoc, newDoc) -> {
+                if (newDoc != null) {
+                    Platform.runLater(() -> {
+                        try {
+                            webEngine.executeScript(
+                                    "document.querySelector('header').style.display = 'none';" +
+                                            "document.querySelector('footer').style.display = 'none';" +
+                                            "document.body.style.overflow = 'hidden';"
+                            );
+                            webEngine.executeScript(
+                                    "let canvas = document.getElementById('coins_chart_area');" +
+                                            "canvas.style.display = 'block';" +
+                                            "canvas.width = 1350;" +
+                                            "canvas.height = 903;"
+                            );
+                        } catch (Exception e) {
+                            System.err.println("Error executing JavaScript: " + e.getMessage());
+                            e.printStackTrace();
+                        }
+                    });
+                }
+            });
+
+            webEngine.load(url);
+        }
+    }
+
     @Override
     public void onPriceUpdate(String cryptocurrency, double price) {
-        // Actualizar los Labels en el hilo de JavaFX
         Platform.runLater(() -> {
-            switch (cryptocurrency) {
-                case "BTC":
-                    if (PrecioBitcoin != null) {
-                        PrecioBitcoin.setText(String.format("$%.2f", price));
-
-                        porbit.setText(String.format("%.2f", calculatepr(price, hisbit)));
-
-                        if (price > hisbit) {
-                            porbit.setStyle("-fx-text-fill: green;");
-                            porbit.setText("Last day: Price increased by up to "+porbit.getText() + " %  "+" ↑");
-                        } else {
-                            porbit.setStyle("-fx-text-fill: red;");
-                            porbit.setText("Last day: Price decreased by up to "+porbit.getText() + " %  "+" ↓");
-                        }
-                    }
-                    break;
-                case "ETH":
-                        if (PrecioEth != null) {
-                            PrecioEth.setText(String.format("$%.2f", price));
-
-                            poreth.setText(String.format("%.2f", calculatepr(price, hiseth)));
-
-                            if (price > hiseth) {
-                                poreth.setStyle("-fx-text-fill: green;");
-                                poreth.setText("Last day: Price increased by up to "+poreth.getText() + " %  "+" ↑");
-                            } else {
-                                poreth.setStyle("-fx-text-fill: red;");
-                                poreth.setText("Last day: Price decreased by up to  "+poreth.getText() + " %  "+" ↓");
-                            }
-                        }
-                        break;
-                case "SOL":
-                    if (PrecioEth != null) {
-                        PrecioSolana.setText(String.format("$%.2f", price));
-
-                        porsol.setText(String.format("%.2f", calculatepr(price,hissol)));
-
-                        if (price > hissol) {
-                            porsol.setStyle("-fx-text-fill: green;");
-                            porsol.setText("Last day: Price increased by up to "+porsol.getText() + " %  "+" ↑");
-                        } else {
-                            porsol.setStyle("-fx-text-fill: red;");
-                            porsol.setText("Last day: Price decreased by up to "+porsol.getText() + " %  "+" ↓");
-                        }
-                    }
+            try {
+                updatePrice(cryptocurrency, price);
+            } catch (Exception e) {
+                System.err.println("Error updating price: " + e.getMessage());
+                e.printStackTrace();
             }
         });
+    }
+
+    private void updatePrice(String cryptocurrency, double price) {
+        switch (cryptocurrency) {
+            case "BTC" -> updateBitcoinPrice(price);
+            case "ETH" -> updateEthereumPrice(price);
+            case "SOL" -> updateSolanaPrice(price);
+        }
+    }
+
+    private void updateBitcoinPrice(double price) {
+        if (PrecioBitcoin != null) {
+            PrecioBitcoin.setText(String.format("$%.2f", price));
+            porbit.setText(String.format("%.2f", calculatepr(price, hisbit)));
+            updatePriceStyle(porbit, price, hisbit);
+        }
+    }
+
+    private void updateEthereumPrice(double price) {
+        if (PrecioEth != null) {
+            PrecioEth.setText(String.format("$%.2f", price));
+            poreth.setText(String.format("%.2f", calculatepr(price, hiseth)));
+            updatePriceStyle(poreth, price, hiseth);
+        }
+    }
+
+    private void updateSolanaPrice(double price) {
+        if (PrecioSolana != null) {
+            PrecioSolana.setText(String.format("$%.2f", price));
+            porsol.setText(String.format("%.2f", calculatepr(price, hissol)));
+            updatePriceStyle(porsol, price, hissol);
+        }
+    }
+
+    private void updatePriceStyle(Label label, double price, double historicPrice) {
+        if (price > historicPrice) {
+            label.setStyle("-fx-text-fill: green;");
+            label.setText("Last day: Price increased by up to " + label.getText() + " %  ↑");
+        } else {
+            label.setStyle("-fx-text-fill: red;");
+            label.setText("Last day: Price decreased by up to " + label.getText() + " %  ↓");
+        }
     }
 
     public void setUsername(String username) {
@@ -141,64 +164,36 @@ public class dashboard implements PriceListener{
         }
     }
 
-    private void updateBitcoinPrice() throws Exception {
-
-    }
-
     private void navigateTo(String section) {
         System.out.println("Navigating to: " + section);
     }
 
     private void createReport() {
-
         System.out.println("Creating a report...");
     }
-    private void WebView() {
-        WebEngine webEngine = overalldata.getEngine();
 
-        String url = "https://cryptotreemap.com/";
-        webEngine.load(url);
-
-
-        webEngine.documentProperty().addListener((observable, oldDoc, newDoc) -> {
-            if (newDoc != null) {
-
-                webEngine.executeScript(
-                        "document.querySelector('header').style.display = 'none';" +
-                                "document.querySelector('footer').style.display = 'none';" +
-                                "document.body.style.overflow = 'hidden';"
-                );
-                webEngine.executeScript(
-                        "let canvas = document.getElementById('coins_chart_area');" +
-                                "canvas.style.display = 'block';" +
-                                "canvas.width = 1350;" +
-                                "canvas.height = 903;"
-                );
-            }
-        });
-    }
-
-    private double calculatepr(double precio, double preciohis){
+    private double calculatepr(double precio, double preciohis) {
         if (preciohis == 0) {
             return 0;
         }
         return ((precio - preciohis) / preciohis) * 100;
     }
 
-
     private boolean showAlert(String title, String header, String content) {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle(title);
         alert.setHeaderText(header);
         alert.setContentText(content);
-
         Optional<ButtonType> result = alert.showAndWait();
-        return result.isPresent() && result.get() == ButtonType.OK; // Devuelve true si se seleccionó OK
+        return result.isPresent() && result.get() == ButtonType.OK;
     }
 
     public void cleanup() {
         if (cryptoGraphs != null) {
             cryptoGraphs.disconnect();
+        }
+        if (scheduler != null && !scheduler.isShutdown()) {
+            scheduler.shutdown();
         }
     }
 }
