@@ -1,87 +1,92 @@
-/* Estilos globales */
-* {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+/* Estilos para la ventana de login */
+.root {
+    -fx-background-color: #0E0E10;
+    -fx-font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
 }
+#redon,imgss{
 
-Pane {
-    -fx-background-color: #1E1E1E; /* Fondo oscuro para contraste */
-}
-TextField, PasswordField {
-    -fx-background-color: #2A2A2A; /* Fondo neutro */
-    -fx-border-color: #656ED3; /* Línea principal */
-    -fx-border-width: 2px; /* Grosor del borde */
-    -fx-text-fill: #D1D1D1; /* Color del texto */
-    -fx-font-size: 16px; /* Tamaño de la fuente */
-    -fx-pref-height: 40px; /* Altura fija */
-    -fx-padding: 0 12px; /* Padding para centrar el texto */
-    -fx-background-radius: 20px; /* Esquinas redondeadas */
-    -fx-border-radius: 20px; /* Borde redondeado */
-    -fx-alignment: center-left; /* Alineación del texto */
-    -fx-prompt-text-fill: #7F7F7F; /* Placeholder menos dominante */
-}
-
-TextField:focused, PasswordField:focused {
-    -fx-background-color: #1E1E1E; /* Fondo más oscuro al enfocar */
-    -fx-border-color: #D1D1D1; /* Cambiar color del borde */
-    -fx-text-fill: #D1D1D1; /* Texto más claro */
-    -fx-prompt-text-fill: #9B9B9B; /* Placeholder menos contrastado */
-    -fx-effect: dropshadow(gaussian, rgba(101, 110, 211, 0.3), 10, 0.3, 0, 4); /* Sombra suave */
-}
-
-TextField:hover, PasswordField:hover {
-    -fx-background-color: #2E2E2E; /* Fondo ligeramente más oscuro */
-    -fx-border-color: #D1D1D1; /* Cambiar color del borde */
-    -fx-effect: dropshadow(gaussian, rgba(101, 110, 211, 0.2), 10, 0.2, 0, 3); /* Sombra leve */
-}
-
-TextField:empty:not(:focused), PasswordField:empty:not(:focused) {
-    -fx-background-color: #242424; /* Fondo más uniforme cuando está vacío */
-    -fx-prompt-text-fill: #5F5F5F; /* Placeholder muy tenue */
-    -fx-border-color: #3C3C3C; /* Borde más tenue */
-    -fx-effect: none; /* Sin sombras */
-}
-
-TextField:disabled, PasswordField:disabled {
-    -fx-background-color: #2A2A2A; /* Fondo gris neutro */
-    -fx-border-color: #3C3C3C; /* Borde más tenue */
-    -fx-text-fill: #7F7F7F; /* Texto deshabilitado */
-    -fx-prompt-text-fill: #5F5F5F; /* Placeholder deshabilitado */
-    -fx-effect: none; /* Sin sombra */
+    -fx-background-radius: 30;
 }
 
 
-Button {
-    -fx-background-color: linear-gradient(to bottom, #3B3B3B, #2A2A2A); /* Gradiente suave */
-    -fx-border-color: #656ED3; /* Línea principal */
-    -fx-border-width: 2px; /* Grosor de la línea */
-    -fx-text-fill: #D1D1D1; /* Color del texto */
-    -fx-font-size: 16px;
-    -fx-padding: 12px 25px; /* Ajuste del padding */
-    -fx-cursor: hand; /* Cambiar el cursor a mano */
-    -fx-background-radius: 25px; /* Esquinas redondeadas */
-    -fx-border-radius: 25px; /* Borde redondeado */
-    -fx-effect: dropshadow(gaussian, rgba(101, 110, 211, 0.3), 10, 0.3, 0, 4); /* Sombra inicial */
-    -fx-transition: all 0.3s ease; /* Transición suave */
+
+/* Títulos y Labels */
+#welcome1 {
+    -fx-font-size: 40px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+    -fx-font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
 }
 
-Button:hover {
-    -fx-background-color: linear-gradient(to bottom, #656ED3, #4B4B4B); /* Gradiente vibrante */
-    -fx-text-fill: #FFFFFF; /* Texto en blanco al hacer hover */
-    -fx-border-color: #D1D1D1; /* Cambiar color del borde */
-    -fx-effect: dropshadow(gaussian, rgba(101, 110, 211, 0.6), 15, 0.4, 0, 6); /* Sombra más intensa */
-    transform: scale(1.08); /* Escalar ligeramente */
+#welcome {
+    -fx-font-size: 30px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+    -fx-font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
 }
 
-Button:pressed {
-    -fx-background-color: linear-gradient(to bottom, #2A2A2A, #1E1E1E); /* Gradiente más oscuro */
-    -fx-text-fill: #FFFFFF; /* Texto en blanco */
-    -fx-border-color: #3C3C3C; /* Color del borde más tenue */
-    -fx-effect: dropshadow(gaussian, rgba(101, 110, 211, 0.2), 5, 0.2, 0, 2); /* Sombra reducida */
-    transform: scale(0.95); /* Reducir tamaño al presionar */
+#labelname {
+    -fx-font-size: 20px;
+    -fx-text-fill: #ADADB8;
+    -fx-font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
 }
 
+/* Campos de texto - mismo tamaño para username y password */
+#username, #password {
+    -fx-background-color: #1F1F23;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+    -fx-padding: 12px 16px;
+    -fx-background-radius: 6;
+    -fx-border-radius: 6;
+    -fx-border-color: #2F2F35;
+    -fx-border-width: 1px;
+    -fx-pref-height: 46px; /* Mismo tamaño para ambos */
+    -fx-pref-width: 500px; /* Mismo tamaño para ambos */
+    -fx-prompt-text-fill: #ADADB8;
+}
 
-Label {
-    -fx-text-fill: #656ED3; /* Color del texto contrastado */
-    -fx-font-size: 24px; /* Tamaño de la fuente */
+/* Estilos de focus para campos de texto */
+#username:focused, #password:focused {
+    -fx-background-color: #1F1F23;
+    -fx-border-color: #9147FF;
+    -fx-effect: dropshadow(gaussian, rgba(145,71,255,0.2), 8, 0, 0, 0);
+}
+
+/* Estilos de hover para campos de texto */
+#username:hover, #password:hover {
+    -fx-border-color: #9147FF;
+    -fx-background-color: #1F1F23;
+}
+
+/* Botones */
+#login, #sign {
+    -fx-background-color: #1F1F23;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 6;
+    -fx-padding: 12px 24px;
+    -fx-cursor: hand;
+    -fx-font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+    -fx-min-width: 160px;
+    -fx-pref-height: 50px;
+    -fx-pref-width: 270px;
+}
+
+#login:hover, #sign:hover {
+    -fx-background-color: #9147FF;
+    -fx-effect: dropshadow(gaussian, rgba(145,71,255,0.3), 8, 0, 0, 0);
+}
+
+#login:pressed, #sign:pressed {
+    -fx-background-color: #772CE8;
+}
+
+/* Mensajes de error */
+#mensaje, #empty, #exist {
+    -fx-text-fill: #FF4747;
+    -fx-font-size: 14px;
+    -fx-font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
 }

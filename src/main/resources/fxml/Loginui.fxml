@@ -8,22 +8,47 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1600.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControladoresUi.login">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1600.0" style="-fx-background-color: BLACK;" stylesheets="@style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControladoresUi.login">
    <children>
-      <ImageView fitHeight="906.0" fitWidth="1607.0">
+      <TextField fx:id="username" layoutX="125.0" layoutY="415.0" prefHeight="46.0" prefWidth="500.0" />
+      <PasswordField fx:id="password" layoutX="125.0" layoutY="504.0" prefHeight="108.0" prefWidth="500.0" />
+      <Button fx:id="login" layoutX="89.0" layoutY="592.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="270.0" text="Login" />
+      <Button fx:id="sign" layoutX="375.0" layoutY="592.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="270.0" text="Sign Up" />
+      <Label fx:id="welcome1" layoutX="224.0" layoutY="233.0" prefHeight="98.0" prefWidth="260.0" style="-fx-font-size: 50px; -fx-font-weight: bold;" text="Welcome," />
+      <Label fx:id="mensaje" layoutX="239.0" layoutY="563.0" style="-fx-text-fill: #FF0000;" text="The username or password is incorrect." visible="false" />
+      <Label fx:id="empty" layoutX="598.0" layoutY="461.0" prefHeight="35.0" prefWidth="190.0" style="-fx-text-fill: #FF0000;" text="Fields are empty" visible="false" />
+      <Label fx:id="exist" layoutX="277.0" layoutY="563.0" style="-fx-text-fill: #FF0000;" text="This email already has an account." visible="false" />
+      <ImageView fitHeight="866.0" fitWidth="736.0" layoutX="850.0" layoutY="17.0">
          <image>
-            <Image url="@Login%20Pagelogin%20page.png" />
+            <Image url="@Group%2033%20(1).png" />
          </image>
       </ImageView>
-      <TextField fx:id="username" layoutX="110.0" layoutY="411.0" prefHeight="46.0" prefWidth="500.0" />
-      <PasswordField fx:id="password" layoutX="108.0" layoutY="504.0" prefHeight="108.0" prefWidth="500.0" />
-      <Button fx:id="login" layoutX="63.0" layoutY="592.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="270.0" text="Login" />
-      <Button fx:id="sign" layoutX="375.0" layoutY="592.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="270.0" text="Sign Up" />
-      <Label fx:id="welcome" layoutX="306.0" layoutY="318.0" text="Welcome" />
-      <Label fx:id="labelname" layoutX="121.0" layoutY="301.0" prefHeight="35.0" prefWidth="153.0" style="-fx-text-fill: #000000; -fx-font-size: 20px;" stylesheets="@style.css" text="Username:" />
-      <Label fx:id="welcome1" layoutX="223.0" layoutY="185.0" prefHeight="98.0" prefWidth="293.0" style="-fx-font-size: 50px; -fx-font-weight: bold;" text="SecureChat" />
-      <Label fx:id="mensaje" layoutX="139.0" layoutY="550.0" style="-fx-text-fill: #FF0000;" text="The username or password is incorrect." visible="false" />
-      <Label fx:id="empty" layoutX="598.0" layoutY="461.0" prefHeight="35.0" prefWidth="190.0" style="-fx-text-fill: #FF0000;" text="Fields are empty" visible="false" />
-      <Label fx:id="exist" layoutX="177.0" layoutY="550.0" style="-fx-text-fill: #FF0000;" text="This email already has an account." visible="false" />
+      <Label fx:id="emailt" layoutX="125.0" layoutY="389.0" prefHeight="18.0" prefWidth="48.0" text="Email" textFill="WHITE" />
+      <Label fx:id="passt" layoutX="125.0" layoutY="479.0" text="Password" textFill="WHITE" />
+      <ImageView layoutX="80.0" layoutY="421.0">
+         <image>
+            <Image url="@message.png" />
+         </image>
+      </ImageView>
+      <ImageView layoutX="80.0" layoutY="510.0">
+         <image>
+            <Image url="@padlock%20.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="91.0" fitWidth="77.0" layoutX="20.0" layoutY="26.0">
+         <image>
+            <Image url="@../logo/icone.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="46.0" fitWidth="48.0" layoutX="468.0" layoutY="259.0">
+         <image>
+            <Image url="@../logo/waving-hand-svgrepo-com.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="52.0" fitWidth="200.0" layoutX="269.0" layoutY="666.0">
+         <image>
+            <Image url="@Group%2013.png" />
+         </image>
+      </ImageView>
    </children>
 </Pane>

@@ -108,25 +108,58 @@
     -fx-padding: 12px 24px;
     -fx-cursor: hand;
     -fx-font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
-    -fx-transition: -fx-background-color 0.3s, -fx-transform 0.3s;
+    -fx-scale-x: 1;
+    -fx-scale-y: 1;
+    -fx-background-insets: 0;
+    -fx-effect: dropshadow(gaussian, transparent, 8, 0, 0, 0);
+
+    /* Agregar propiedades de transición */
+    -fx-transition-duration: 0.2s;
+    -fx-transition-timing-function: ease-out;
 }
 
+/* Estilo cuando el ratón está sobre el botón */
 .Button:hover {
     -fx-background-color: #9147FF;
     -fx-effect: dropshadow(gaussian, rgba(145,71,255,0.3), 8, 0, 0, 0);
-    -fx-transform: scale(1.05);
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+    -fx-transition-duration: 0.2s;
 }
 
+/* Estilo cuando se presiona el botón */
 .Button:pressed {
     -fx-background-color: #772CE8;
+    -fx-scale-x: 0.95;
+    -fx-scale-y: 0.95;
+    -fx-transition-duration: 0.1s;
 }
 
-/* Navigation Button Specific Styles */
+/* Agregar este estilo específico para los botones de navegación */
 #homeButton, #chatButton, #marketButton, #createReportButton, #exit {
     -fx-background-color: #1F1F23;
     -fx-text-fill: white;
     -fx-background-radius: 6;
     -fx-min-width: 160px;
+
+    /* Agregar estas propiedades para la animación */
+    -fx-transition-duration: 0.2s;
+    -fx-transition-timing-function: ease-out;
+}
+
+/* Estilo hover para los botones de navegación */
+#homeButton:hover, #chatButton:hover, #marketButton:hover, #createReportButton:hover, #exit:hover {
+    -fx-background-color: #9147FF;
+    -fx-effect: dropshadow(gaussian, rgba(145,71,255,0.3), 8, 0, 0, 0);
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+}
+
+/* Estilo pressed para los botones de navegación */
+#homeButton:pressed, #chatButton:pressed, #marketButton:pressed, #createReportButton:pressed, #exit:pressed {
+    -fx-background-color: #772CE8;
+    -fx-scale-x: 0.95;
+    -fx-scale-y: 0.95;
 }
 
 /* Price Change Labels */
@@ -176,7 +209,6 @@
 
 .hover-lift {
     -fx-translate-y: 0;
-    -fx-transition: -fx-translate-y 0.2s ease-out;
 }
 
 .hover-lift:hover {

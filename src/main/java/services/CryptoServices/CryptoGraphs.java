@@ -44,7 +44,7 @@ public class CryptoGraphs {
                                 priceListener.onPriceUpdate(cryptocurrency, price);
                             }
 
-                            System.out.println(cryptocurrency + " Price: " + price);
+
                         }
                     } catch (Exception e) {
                         System.err.println("Error procesando mensaje: " + e.getMessage());
