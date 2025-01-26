@@ -14,36 +14,17 @@
     import javafx.util.Duration;
     import javafx.geometry.Pos;
     import javafx.scene.layout.VBox;
-    import javafx.scene.paint.Color;
     import javafx.animation.Timeline;
     import javafx.animation.KeyFrame;
-    import javafx.scene.shape.SVGPath;
     import javafx.animation.ParallelTransition;
     import javafx.animation.Interpolator;
-    import javafx.animation.FadeTransition;
-    import javafx.application.Platform;
-    import javafx.concurrent.Task;
-    import javafx.fxml.FXMLLoader;
-    import javafx.scene.Scene;
     import javafx.scene.control.Alert;
     import javafx.scene.control.Label;
     import javafx.scene.control.ProgressIndicator;
-    import javafx.scene.layout.Pane;
-    import javafx.scene.layout.VBox;
-    import javafx.stage.Stage;
-    import javafx.stage.StageStyle;
-    import javafx.util.Duration;
 
-    import java.io.File;
-    import java.io.FileNotFoundException;
-    import java.net.URL;
-    import services.UserLogSig.userServices;
+    import Services.UserLogSig.userServices;
 
-    import java.io.File;
-    import java.io.FileNotFoundException;
-    import java.net.URL;
-
-    public class login {
+    public class Login {
 
         @FXML
         private TextField username; // Campo para el nombre de usuario
@@ -168,7 +149,7 @@
 
         private void loadDashboard() {
             try {
-                System.out.println("Iniciando carga del dashboard...");
+                System.out.println("Iniciando carga del Dashboard...");
                 Stage loadingStage = new Stage(StageStyle.UNDECORATED);
                 Pane loadingPane = new Pane();
 
@@ -237,10 +218,10 @@
                     try {
                         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/DashBoradml/dashboard.fxml"));
                         Pane dashboardPane = fxmlLoader.load();
-                        dashboard dashboardController = fxmlLoader.getController();
+                        Dashboard dashboardController = fxmlLoader.getController();
 
                         if (dashboardController == null) {
-                            throw new IllegalStateException("No se pudo obtener el controlador del dashboard");
+                            throw new IllegalStateException("No se pudo obtener el controlador del Dashboard");
                         }
 
                         Scene dashboardScene = new Scene(dashboardPane);
@@ -264,7 +245,7 @@
                         parallelOut.setOnFinished(e -> {
                             currentStage.setScene(dashboardScene);
 
-                            // Animación de entrada para el dashboard
+                            // Animación de entrada para el Dashboard
                             FadeTransition dashboardFadeIn = new FadeTransition(Duration.seconds(0.3), dashboardPane);
                             dashboardFadeIn.setFromValue(0);
                             dashboardFadeIn.setToValue(1);
@@ -296,12 +277,12 @@
                         timeline.play();
 
                     } catch (Exception e) {
-                        System.err.println("Error al cargar el dashboard: " + e.getMessage());
+                        System.err.println("Error al cargar el Dashboard: " + e.getMessage());
                         e.printStackTrace();
                         loadingStage.close();
                         showAlert(Alert.AlertType.ERROR,
                                 "Error",
-                                "Error al cargar el dashboard",
+                                "Error al cargar el Dashboard",
                                 "Detalles: " + e.getMessage());
                     }
                 });

@@ -1,4 +1,4 @@
-package services.CryptoServices;
+package Services.CryptoServices;
 
 import org.java_websocket.client.WebSocketClient;
 import org.java_websocket.handshake.ServerHandshake;
@@ -81,7 +81,6 @@ public class CryptoGraphs {
         }
     }
 
-    // Método para cerrar la conexión si es necesario
     public void disconnect() {
         if (webSocketClient != null) {
             webSocketClient.close();

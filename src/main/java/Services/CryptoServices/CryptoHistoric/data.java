@@ -1,6 +1,4 @@
-    package services.CryptoServices.CryptoHistoric;
-
-    import services.CryptoServices.Extractor;
+    package Services.CryptoServices.CryptoHistoric;
 
     import java.io.BufferedReader;
     import java.io.InputStreamReader;

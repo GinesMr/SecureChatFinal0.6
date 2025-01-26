@@ -1,6 +1,5 @@
 package ControladoresUi;
 
-import javafx.animation.FadeTransition;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -10,28 +9,26 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
-import javafx.scene.shape.Rectangle;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
-import javafx.util.Duration;
-import services.CryptoServices.CryptoGraphs;
-import services.CryptoServices.CryptoHistoric.data;
-import services.CryptoServices.Extractor;
-import services.CryptoServices.PriceListener;
+import Services.CryptoServices.CryptoGraphs;
+import Services.CryptoServices.CryptoHistoric.data;
+import Services.CryptoServices.Extractor;
+import Services.CryptoServices.PriceListener;
 
 import java.io.IOException;
 import java.util.Optional;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 
-public class dashboard implements PriceListener {
+public class Dashboard implements PriceListener {
     private CryptoGraphs cryptoGraphs;
     private data data = new data();
     private Extractor extractor = new Extractor();
     private ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
     private String username;
-    private login login;
+    private Login login;
     Double hisbit = extractor.extract(data.getHistoricData("BTC","USD"));
     Double hiseth = extractor.extract(data.getHistoricData("ETH","USD"));
     Double hissol = extractor.extract(data.getHistoricData("SOL","USD"));
@@ -189,9 +186,9 @@ public class dashboard implements PriceListener {
     }
 
     private void navigateToReport() throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/Report/report.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/SolanaMemeCoinMarket/sol.fxml"));
         Pane reppane = fxmlLoader.load();
-        reportCon rep = fxmlLoader.getController();
+        SolanaMemeCoinMarket rep = fxmlLoader.getController();
         Scene reps = new Scene(reppane);
         Stage currentStage = (Stage) createReportButton.getScene().getWindow();
         currentStage.setScene(reps);
@@ -203,7 +200,7 @@ public class dashboard implements PriceListener {
     private void navigateToDashboard() throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/DashBoradml/dashboard.fxml"));
         Pane dashboard = fxmlLoader.load();
-        dashboard controller = fxmlLoader.getController();
+        Dashboard controller = fxmlLoader.getController();
         Scene reps = new Scene(dashboard);
         Stage currentStage = (Stage) homeButton.getScene().getWindow();
         currentStage.setScene(reps);
